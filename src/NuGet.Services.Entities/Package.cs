@@ -275,5 +275,8 @@ namespace NuGet.Services.Entities
         /// See <see cref="PackageDeprecation.AlternatePackage"/>.
         /// </summary>
         public virtual ICollection<PackageDeprecation> AlternativeOf { get; set; }
+
+
+        public string TestMigration { get; set; }
     }
 }

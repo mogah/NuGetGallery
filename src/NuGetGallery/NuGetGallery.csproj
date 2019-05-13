@@ -250,6 +250,10 @@
     <Compile Include="Migrations\201905071526573_DevelopmentDependencyMetadata.Designer.cs">
       <DependentUpon>201905071526573_DevelopmentDependencyMetadata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905131827265_TestMigration.cs" />
+    <Compile Include="Migrations\201905131827265_TestMigration.Designer.cs">
+      <DependentUpon>201905131827265_TestMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\IPackageDeprecationService.cs" />
     <Compile Include="Queries\AutocompleteDatabasePackageIdsQuery.cs" />
     <Compile Include="Queries\AutocompleteDatabasePackageVersionsQuery.cs" />
@@ -1730,6 +1734,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905071526573_DevelopmentDependencyMetadata.resx">
       <DependentUpon>201905071526573_DevelopmentDependencyMetadata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131827265_TestMigration.resx">
+      <DependentUpon>201905131827265_TestMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OData\QueryAllowed\Data\apiv1packages.json" />
     <EmbeddedResource Include="OData\QueryAllowed\Data\apiv1search.json" />
