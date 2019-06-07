@@ -531,7 +531,7 @@
                                         <span class="pull-left">
                                             <a>@(dep.Id)</a>
                                         </span>
-                                        <span class="badge pull-right" style="background-color: #004880">
+                                        <span class="badge pull-right badge-gh-repo">
                                             @(dep.Stars.ToKiloFormat()) <i class="ms-Icon ms-Icon--FavoriteStarFill" aria-hidden="true" style="color:#ffac0e"></i>
                                         </span>
                                     </button>
@@ -890,12 +890,12 @@
 
                 @if (Model.IsGitHubUsageEnabled && Model.GitHubDependenciesInformation.TotalRepos > 0)
                 {
-                <li>
-                    <img class="icon" aria-hidden="true" alt="GitHub logo"
-                         src="@Url.Absolute("~/Content/gallery/img/github.svg")"
-                         @ViewHelpers.ImageFallback(Url.Absolute("~/Content/gallery/img/github-32x32.png")) />
-                    @(Model.GitHubDependenciesInformation.TotalRepos) popular dependent GitHub repos
-                </li>
+                    <li>
+                        <img class="icon" aria-hidden="true" alt="GitHub logo"
+                             src="@Url.Absolute("~/Content/gallery/img/github.svg")"
+                             @ViewHelpers.ImageFallback(Url.Absolute("~/Content/gallery/img/github-32x32.png")) />
+                        @(Model.GitHubDependenciesInformation.TotalRepos) popular dependent GitHub repos
+                    </li>
                 }
             </ul>
             @if (StatisticsHelper.IsStatisticsPageAvailable)
