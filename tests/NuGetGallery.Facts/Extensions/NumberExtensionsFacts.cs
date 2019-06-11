@@ -29,5 +29,38 @@ namespace NuGetGallery.Extensions
                 Assert.Equal(expected, actual);
             }
         }
+
+        public class TheToKiloFormatMethod
+        {
+            [Theory]
+            [InlineData(1, "1")]
+            [InlineData(999, "999")]
+            [InlineData(1000, "1.00K")]
+            [InlineData(1990, "1.99K")]
+            [InlineData(1999, "1.99K")]
+            [InlineData(9990, "9.99K")]
+            [InlineData(9999, "9.99K")]
+            [InlineData(10_000, "10.0K")]
+            [InlineData(10_990, "10.9K")]
+            [InlineData(99_990, "99.9K")]
+            [InlineData(100_000, "100K")]
+            [InlineData(100_990, "100K")]
+            [InlineData(100_999, "100K")]
+            [InlineData(999_000, "999K")]
+            [InlineData(999_999, "999K")]
+            [InlineData(1_000_000, "1.00M")]
+            [InlineData(1_999_000, "1.99M")]
+            [InlineData(99_990_000, "99.9M")]
+            [InlineData(100_990_000, "100M")]
+            [InlineData(999_990_000, "999M")]
+            [InlineData(1_000_000_000, "1.00G")]
+            [InlineData(1_999_000_000, "1.99G")]
+            public void FormatsUsingExpectedUnit(int number, string expected)
+            {
+                var actual = NumberExtensions.ToKiloFormat(number);
+
+                Assert.Equal(expected, actual);
+            }
+        }
     }
 }

@@ -27,6 +27,7 @@ using NuGetGallery.Auditing;
 using NuGetGallery.Configuration;
 using NuGetGallery.Diagnostics;
 using NuGetGallery.Filters;
+using NuGetGallery.GitHub;
 using NuGetGallery.Helpers;
 using NuGetGallery.Infrastructure;
 using NuGetGallery.Infrastructure.Mail.Messages;
@@ -749,6 +750,9 @@ namespace NuGetGallery
             model.IsCertificatesUIEnabled = _contentObjectService.CertificatesConfiguration?.IsUIEnabledForUser(currentUser) ?? false;
             model.IsAtomFeedEnabled = _featureFlagService.IsPackagesAtomFeedEnabled();
             model.IsPackageDeprecationEnabled = _featureFlagService.IsManageDeprecationEnabled(currentUser);
+            model.IsGitHubUsageEnabled = _featureFlagService.IsGitHubUsageEnabled(currentUser);
+
+            model.GitHubDependenciesInformation = _contentObjectService.GitHubUsageConfiguration.GetPackageInformation(id);
 
             model.ReadMeHtml = await _readMeService.GetReadMeHtmlAsync(package);
 
